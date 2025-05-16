@@ -1,0 +1,6 @@
+@Unigis.PuntoVentas.BackEnd_HostAddress = http://localhost:5105
+
+GET {{Unigis.PuntoVentas.BackEnd_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

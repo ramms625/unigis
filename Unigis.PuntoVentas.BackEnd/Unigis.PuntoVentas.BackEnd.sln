@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.36105.23 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unigis.PuntoVentas.BackEnd", "Unigis.PuntoVentas.BackEnd\Unigis.PuntoVentas.BackEnd.csproj", "{37B4F2B5-5A89-4622-9149-06D9313B2C8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unigis.PuntoVentas.BackEnd.Data", "Unigis.PuntoVentas.BackEnd.Data\Unigis.PuntoVentas.BackEnd.Data.csproj", "{A74A3FDD-4818-46B1-8745-A8974334E6E2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{37B4F2B5-5A89-4622-9149-06D9313B2C8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37B4F2B5-5A89-4622-9149-06D9313B2C8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37B4F2B5-5A89-4622-9149-06D9313B2C8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37B4F2B5-5A89-4622-9149-06D9313B2C8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A74A3FDD-4818-46B1-8745-A8974334E6E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A74A3FDD-4818-46B1-8745-A8974334E6E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A74A3FDD-4818-46B1-8745-A8974334E6E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A74A3FDD-4818-46B1-8745-A8974334E6E2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2105F0D6-EBE4-4E55-BAF7-12DA5D8A5F81}
+	EndGlobalSection
+EndGlobal
