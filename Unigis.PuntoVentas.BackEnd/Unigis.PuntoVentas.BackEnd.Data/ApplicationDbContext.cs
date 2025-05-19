@@ -10,8 +10,6 @@ namespace Unigis.PuntoVentas.BackEnd.Data
             
         }
 
-
-        
         public DbSet<PuntoDeVentas> PuntoVentas { get; set; }
         public DbSet<Zonas> Zonas { get; set; }
     }

@@ -1,4 +1,4 @@
-# Unigis Punto de Ventas BackEnd
+# UNIGIS - Punto de Ventas BackEnd
 
 Este proyecto es una API RESTful desarrollada en ASP.NET Core 8 para la gestión de puntos de venta y zonas geográficas. Utiliza Entity Framework Core para el acceso a datos y SQL Server como base de datos.
 

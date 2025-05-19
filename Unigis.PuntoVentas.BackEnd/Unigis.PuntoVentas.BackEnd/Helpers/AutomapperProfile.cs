@@ -8,7 +8,8 @@ namespace Unigis.PuntoVentas.BackEnd.Helpers
     {
         public AutomapperProfile()
         {
-            CreateMap<PuntoDeVentasCreacionDTO, PuntoDeVentas>();   
+            CreateMap<PuntoDeVentasCreacionDTO, PuntoDeVentas>();
+            CreateMap<PuntoDeVentas, PuntoDeVentasDTO>();
         }
     }
 }

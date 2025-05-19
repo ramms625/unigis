@@ -9,7 +9,6 @@ namespace Unigis.PuntoVentas.BackEnd.Data.DTOs
         public decimal Latitud { get; set; }
         public decimal Longitud { get; set; }
         public decimal Ventas { get; set; }
-        public int IdZona { get; set; }
         public Zonas Zona { get; set; }
     }
 }
