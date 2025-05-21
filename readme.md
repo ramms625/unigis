@@ -1,6 +1,6 @@
 # UNIGIS - Punto de Ventas
 
-Este repositorio contiene la solución para la gestión de puntos de venta y zonas geográficas, compuesta por los siguientes proyectos:
+Este repositorio contiene la prueba técnica para la solución de gestión de puntos de venta y zonas geográficas, compuesta por los siguientes proyectos:
 
 ## Estructura del Repositorio
 
@@ -9,7 +9,7 @@ Este repositorio contiene la solución para la gestión de puntos de venta y zon
 - **Unigis.PuntoVentas.BackEnd.Data/**  
   Proyecto de acceso a datos, entidades, DTOs y migraciones para SQL Server.
 - **Unigis.PuntoVentas.FrontEnd/**  
-  (Opcional) Proyecto para la interfaz de usuario, por ejemplo, una aplicación React.
+  Proyecto para la interfaz de usuario, con React.
 
 ## Características Principales
 
@@ -23,16 +23,17 @@ Este repositorio contiene la solución para la gestión de puntos de venta y zon
 ## Instalación y Ejecución
 
 1. Clona el repositorio.
-2. Configura la cadena de conexión en `Unigis.PuntoVentas.BackEnd/appsettings.json` o `appsettings.Development.json`.
+2. Configura la cadena de conexión en `Unigis.PuntoVentas.BackEnd/appsettings.json` y/o `appsettings.Development.json`.
 3. Restaura los paquetes NuGet:
    ```sh
    dotnet restore
    ```
-4. Ejecuta las migraciones y la carga de datos inicial:
+4. (Opcional) Ejecutar las migraciones y la carga de datos inicial:
    ```sh
    dotnet run --project Unigis.PuntoVentas.BackEnd/Unigis.PuntoVentas.BackEnd.csproj
    ```
-5. (Opcional) Si tienes el frontend, navega a `Unigis.PuntoVentas.FrontEnd` y ejecuta:
+5. Las migraciones se ejecutarán automáticamente una vez corriendo el proyecto backend previamente configurando la cadena de conexión, todo esto desde el archivo: `Unigis.PuntoVentas.BackEnd.Data.DataInicial/IDataInicial.cs`
+6. Ejecutar los comandos para `Unigis.PuntoVentas.FrontEnd`:
    ```sh
    npm install
    npm start
@@ -54,5 +55,5 @@ Este repositorio contiene la solución para la gestión de puntos de venta y zon
 - .NET 8 (ASP.NET Core Web API)
 - Entity Framework Core 8 (SQL Server)
 - AutoMapper
-- Swagger (Swashbuckle)
+- Swagger
 - React para el frontend

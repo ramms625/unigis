@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import MapaForm from '../mapa-form';
 import ComboBoxZonas from '../combobox-zonas';
@@ -10,6 +10,12 @@ import '../../styles/nuevo-punto-venta.css';
 
 
 const NuevoPuntoVenta = () => {
+
+
+    useEffect(() => {
+        document.title = 'Gestión de puntos de venta - Nuevo';
+    }, []);
+    
 
     const [coords, setCoords] = useState(null);
     const [zonaSelected, setZonaSelected] = useState(-1);

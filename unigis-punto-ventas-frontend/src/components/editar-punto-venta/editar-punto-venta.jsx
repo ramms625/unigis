@@ -34,6 +34,8 @@ const EditarPuntoVenta = () => {
 
     // Inicializa los estados locales cuando se carga puntoVenta
     useEffect(() => {
+        document.title = 'Gestión de puntos de venta - Edición';
+
         if (puntoVenta) {
 
             setDescripcion(puntoVenta.descripcion ?? '');

@@ -2,8 +2,14 @@ import LinkNuevoPuntoVenta from '../link-nuevo-punto-venta';
 import MapaContainer from './mapa-container';
 import ChartContainer from './chart-container';
 import '../../styles/index.css';
+import { useEffect } from 'react';
 
 const Index = () => {
+
+    useEffect(() => {
+        document.title = 'Gestión de puntos de venta - Index';
+    }, []);
+
     return (
         <div className="container">
             <div className="title-container flex">
