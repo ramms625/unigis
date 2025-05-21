@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Swashbuckle.AspNetCore.Annotations;
+using System.Data;
 using System.Net;
 using Unigis.PuntoVentas.BackEnd.Data;
 using Unigis.PuntoVentas.BackEnd.Data.DTOs;
@@ -17,12 +18,15 @@ namespace Unigis.PuntoVentas.BackEnd.Controllers
     {
         private readonly IMapper _mapper;
         private readonly ApplicationDbContext _context;
+        private readonly EjecucionQueries _ejecucionQueries;
         public PuntoVentasController(
             IMapper mapper,
-            ApplicationDbContext context)
+            ApplicationDbContext context,
+            EjecucionQueries ejecucionQueries)
         {
             _mapper = mapper;
             _context = context;
+            _ejecucionQueries = ejecucionQueries;
         }
 
 
@@ -77,6 +81,33 @@ namespace Unigis.PuntoVentas.BackEnd.Controllers
                 var ventaDTO = _mapper.Map<PuntoDeVentasDTO>(venta);
 
                 return GetResponse(HttpStatusCode.OK, ventaDTO);
+            }
+            catch (Exception ex)
+            {
+                return GetNoContentResponse(HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
+
+
+
+
+
+
+
+        /// <summary>
+        /// Endpoint para consulta el detalle de ventas por zonas
+        /// </summary>
+        /// <returns>Listado de puntos de venta</returns>
+        [HttpGet("GetVentasPorZona")]
+        [SwaggerOperation(Summary = "Get ventas por zona.", Description = "Devuelve un listado de las ventas por zona.")]
+        [ProducesResponseType(typeof(ApiResponse<VentasZona>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType(typeof(NoContentApiResponse), (int)HttpStatusCode.InternalServerError)]
+        public async Task<IActionResult> GetVentasPorZona()
+        {
+            try
+            {
+                var ventasZona = await GetVentasZona();
+                return GetResponse(HttpStatusCode.OK, ventasZona);
             }
             catch (Exception ex)
             {
@@ -219,9 +250,62 @@ namespace Unigis.PuntoVentas.BackEnd.Controllers
 
 
 
+
+
+
         private async Task<bool> ExisteZona(int idZona)
         {
             return await _context.Zonas.AnyAsync(x => x.Id == idZona);
+        }
+
+
+        private async Task<VentasZona> GetVentasZona()
+        {
+            DataTable? dataTable = null;
+
+            try
+            {
+                string query = @"
+                SELECT		Z.Descripcion,
+			                SUM(V.Ventas) Ventas
+                FROM		PuntoVentas V
+                INNER JOIN	Zonas Z
+                ON			V.IdZona = Z.Id
+                GROUP BY	Z.Descripcion";
+
+
+                dataTable = await _ejecucionQueries.GetDataTable(query);
+
+
+                decimal total = 0;
+                var detalles = new List<VentaDetalle>();
+
+
+                foreach (DataRow dataRow in dataTable.Rows)
+                {
+                    total += Convert.ToDecimal(dataRow["Ventas"].ToString());
+
+                    detalles.Add(new VentaDetalle()
+                    {
+                        Value = Convert.ToDecimal(dataRow["Ventas"].ToString()),
+                        Name = dataRow["Descripcion"].ToString()
+                    });
+                }
+
+                return new VentasZona
+                {
+                    Total = total,
+                    Detalle = detalles
+                };
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            finally
+            {
+                dataTable?.Dispose();
+            }
         }
     }
 }

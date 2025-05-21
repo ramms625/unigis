@@ -1,0 +1,70 @@
+.table-container {
+    margin-bottom: 2rem;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    font-size: 1rem;
+}
+
+@media (max-width: 720px) {
+    table {
+        font-size: 0.9rem;
+    }
+}
+
+th, td {
+    padding: 0.3rem 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #2e2e2e;
+}
+
+th {
+    background: var(--gh-blue-dark);
+    font-weight: 600;
+    min-width: 140px;
+}
+
+th:last-child {
+    text-align: center;
+}
+
+td {
+    background: var(--gh-header);
+}
+
+tr:hover td {
+    background: var(--gh-bg);
+}
+
+td .flex {
+    justify-content: center;
+}
+
+.btn-delete {
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 0.2rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    transition: background 0.2s;
+}
+
+.btn-delete:hover {
+    background: #c0392b;
+}
+
+.lnkb-navigate {
+    background-color: #1976d2;
+    color: var(--gh-text);
+    text-decoration: none;
+    padding: 0.2rem 0.8rem;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+    font-weight: 500;
+}

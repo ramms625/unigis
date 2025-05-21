@@ -1,0 +1,13 @@
+.map-container {
+    height: 70vh;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.chart-container {
+    margin-bottom: 2rem;
+}
+
+.chart-container h3 {
+    text-align: center;
+}

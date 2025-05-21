@@ -76,16 +76,16 @@ namespace Unigis.PuntoVentas.BackEnd.Data.DataInicial
             {
                 var ventas = new List<PuntoDeVentas>
             {
-                new () { Descripcion = "Negocio 1", IdZona = 1, Latitud = 90.25511M, Longitud = -180.0000M, Ventas = 120000 },
-                new () { Descripcion = "Negocio 2", IdZona = 2, Latitud = 90.25511M, Longitud = -180.0000M, Ventas = 87400 },
-                new () { Descripcion = "Negocio 3", IdZona = 3, Latitud = 90.25511M, Longitud = -180.0000M, Ventas = 141000 },
-                new () { Descripcion = "Negocio 4", IdZona = 4, Latitud = 90.25511M, Longitud = -180.0000M, Ventas = 43000 },
-                new () { Descripcion = "Negocio 5", IdZona = 5, Latitud = 90.25511M, Longitud = -180.0000M, Ventas = 97300 },
-                new () { Descripcion = "Negocio 6", IdZona = 1, Latitud = 90.25511M, Longitud = -180.0000M, Ventas = 170000 },
-                new () { Descripcion = "Negocio 7", IdZona = 2, Latitud = 90.25511M, Longitud = -180.0000M, Ventas = 57000 },
-                new () { Descripcion = "Negocio 8", IdZona = 3, Latitud = 90.25511M, Longitud = -180.0000M, Ventas = 68000 },
-                new () { Descripcion = "Negocio 9", IdZona = 4, Latitud = 90.25511M, Longitud = -180.0000M, Ventas = 51000 },
-                new () { Descripcion = "Negocio 10", IdZona = 5, Latitud = 90.25511M, Longitud = -180.0000M, Ventas = 77600 }
+                new () { Descripcion = "Negocio 1", IdZona = 1, Latitud = 19.4352M, Longitud = -99.1412M, Ventas = 120000 },
+                new () { Descripcion = "Negocio 2", IdZona = 2, Latitud = 19.4844M, Longitud = -99.1172M, Ventas = 87400 },
+                new () { Descripcion = "Negocio 3", IdZona = 3, Latitud = 19.3322M, Longitud = -99.1882M, Ventas = 141000 },
+                new () { Descripcion = "Negocio 4", IdZona = 4, Latitud = 19.4361M, Longitud = -99.0719M, Ventas = 43000 },
+                new () { Descripcion = "Negocio 5", IdZona = 5, Latitud = 19.3616M, Longitud = -99.2760M, Ventas = 97300 },
+                new () { Descripcion = "Negocio 6", IdZona = 1, Latitud = 19.4359M, Longitud = -99.1462M, Ventas = 170000 },
+                new () { Descripcion = "Negocio 7", IdZona = 2, Latitud = 19.4939M, Longitud = -99.1218M, Ventas = 57000 },
+                new () { Descripcion = "Negocio 8", IdZona = 3, Latitud = 19.2624M, Longitud = -99.1047M, Ventas = 68000 },
+                new () { Descripcion = "Negocio 9", IdZona = 4, Latitud = 19.3579M, Longitud = -99.0676M, Ventas = 51000 },
+                new () { Descripcion = "Negocio 10", IdZona = 5, Latitud = 19.4542M, Longitud = -99.2215M, Ventas = 77600 }
             };
 
 

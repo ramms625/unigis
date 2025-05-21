@@ -62,6 +62,17 @@ namespace Unigis.PuntoVentas.BackEnd
                 });
 
 
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy("UNIGIS_React", policy =>
+                {
+                    policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+                });
+            });
+
+
+
             services.AddAutoMapper(typeof(Startup));
 
             services.AddEndpointsApiExplorer();
@@ -71,6 +82,8 @@ namespace Unigis.PuntoVentas.BackEnd
             services.AddScoped<IDataInicial, DataInicial>();
 
             services.AddScoped(typeof(FiltroExisteRecurso<>));
+
+            services.AddScoped<EjecucionQueries>();
         }
 
 
@@ -85,6 +98,8 @@ namespace Unigis.PuntoVentas.BackEnd
 
                 app.UseSwaggerUI(o => o.SwaggerEndpoint("/swagger/v1/swagger.json", "UNIGIS - punto de ventas"));
             }
+
+            app.UseCors("UNIGIS_React");
 
             app.UseHttpsRedirection();
 

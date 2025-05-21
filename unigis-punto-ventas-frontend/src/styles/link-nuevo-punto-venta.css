@@ -1,0 +1,8 @@
+.lnkb-nuevo {
+    color: var(--gh-text);
+    gap: 0.5rem;
+}
+
+.lnkb-nuevo svg {
+    fill: var(--gh-primary);
+}
