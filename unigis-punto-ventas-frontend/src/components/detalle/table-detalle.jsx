@@ -12,7 +12,6 @@ const TableDetalle = () => {
     const getVentas = async () => {
         const response = await getItems('puntoventas/getall');
         setVentas(response.data);
-        console.log(response.data)
     }
 
 

@@ -46,7 +46,7 @@ td .flex {
 
 .btn-delete {
     background: #e74c3c;
-    color: #fff;
+    color: var(--gh-text);
     border: none;
     padding: 0.2rem 0.8rem;
     border-radius: 4px;
