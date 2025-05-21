@@ -11,7 +11,7 @@ export const ValidateForm = (id, descripcion, ventas, zonaSelected, coords) => {
         return result;
     }
 
-    if (!ventas.trim()) {
+    if (!ventas.toString().trim()) {
         result.message = 'El total de ventas es obligatorio.';
         return result;
     }

@@ -26,4 +26,25 @@ const ShowNotification = ({ message, notificationType = 1 }) => {
     });
 };
 
-export default ShowNotification;
+
+
+const ShowConfirmationAlert = async (title) => {
+    return await Swal.fire({
+        title: '',
+        text: title,
+        icon: 'info',
+        showConfirmButton: true,
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: 'Aceptar',
+        cancelButtonText: 'Cancelar',
+        customClass: {
+            confirmButton: 'btn btn-confirm-swal',
+            denyButton: 'btn btn-deny-swal',
+            cancelButton: 'btn btn-cancel-swal'
+        }
+    });
+}
+
+export { ShowNotification, ShowConfirmationAlert };
